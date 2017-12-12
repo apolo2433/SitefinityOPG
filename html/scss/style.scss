@@ -1,0 +1,967 @@
+/*----------  libraries
+------------------------------------------------------------------------------*/
+@import "compass";
+@import "config/reset";
+@import "config/variables";
+
+/*----------  helpers
+------------------------------------------------------------------------------*/
+@import "layout/sprite";
+@import "layout/icon-font";
+@import "helpers/mixins";
+@import "helpers/helpers";
+
+/*----------  base
+------------------------------------------------------------------------------*/
+@import "base/grid-framework";
+@import "base/grid";
+@import "base/typography";
+@import "base/layout";
+
+/*----------  layout
+------------------------------------------------------------------------------*/
+@import "helpers/tooltip";
+@import "layout/buttons";
+@import "layout/icons";
+@import "layout/forms";
+@import "layout/lists";
+
+/*----------  partials
+------------------------------------------------------------------------------*/
+@import "partials/header";
+@import "partials/footer";
+
+/*----------  lib
+------------------------------------------------------------------------------*/
+@import "lib/font-awesome";
+@import "lib/mdi";
+@import "lib/magnific-popup";
+
+/*----------  styles
+------------------------------------------------------------------------------*/
+.content-body {
+	@include base-float;
+	margin-bottom: 100px;
+
+    @include breakpoint(phone){
+        margin-bottom: 70px;
+    }
+}
+.content-wrapper {
+	@include base-float;
+}
+
+/*----------  banner wrapper
+------------------------------------------------------------------------------*/
+.banner-wrapper {
+	@include base-float;
+	position: relative;
+	height: 300px;
+	margin-bottom: 41px;
+	overflow: hidden;
+	img {
+		@include horizontal-align;
+		height: 300px;
+	}
+	.banner-content {
+		position: absolute;
+		bottom: 21px;
+		left: 0;
+		width: 100%;
+	}
+	.page-title {
+		@include base-float;
+		position: relative;
+		padding-bottom: 39px;
+		h1 {
+			font-family: $font-con;
+			font-weight: bold;
+			font-size: 72px;
+			line-height: 72px;
+			color: $white;
+			text-transform: uppercase;
+			margin-bottom: 0;
+			letter-spacing: -1.3px;
+		}
+		.line {
+			position: absolute;
+			bottom: 21px;
+			right: 293px;
+			height: 8px;
+			background: $white;
+			width: 2000px;
+			display: inline-block;
+		}
+		.font-icon-arrow-red {
+			position: absolute;
+			bottom: -6px;
+			right: 247px;
+			color: $white;
+			font-size: 50px;
+		}
+    }
+
+    &.home {
+        height: 800px;
+        img {
+            height: 800px;
+            &.mobile {
+                display: none;
+            }
+        }
+        .banner-content {
+            bottom: 423px;
+            .bottom-line-text {
+                position: absolute;
+            }
+            h1, .bottom-line-text {
+                font-size: 125px;
+                font-family: $font-con
+            }
+            h1 {
+                line-height: 1;
+            }
+            .bottom-line-text {
+                text-transform: uppercase;
+                color: $white;
+                font-weight: bold;
+                letter-spacing: -1.3px;
+            }
+        }
+        .page-title {
+            .font-icon-arrow-red {
+                font-size: 78px;
+                bottom: -25px;
+                right: 226px;
+            }
+        }
+    }
+
+    @include breakpoint(tablet){
+        &.home {
+            .page-title {
+                .font-icon-arrow-red {
+                    right: 25px;
+                }
+                .line {
+                    right: 100px;
+                }
+            }
+        }
+    }
+
+	@include breakpoint(phone) {
+        &.home {
+            height: 560px;
+            img {
+                height: 560px;
+                width: 100%;
+                &.mobile {
+                    display: block;
+                }
+                &.desktop {
+                    display: none;
+                }
+            }
+            .banner-content {
+                bottom: 264px;
+                h1, .bottom-line-text {
+                    font-size: 60px;
+                }
+                .bottom-line-text {
+                    margin-top: 15px;
+                }
+            }
+            .page-title {
+                .font-icon-arrow-red {
+                    font-size: 40px;
+                    bottom: -10px;
+                    right: 0px;
+                }
+            }
+        }
+		.banner-content {
+			bottom: 15px;
+		}
+		.page-title {
+			padding-bottom: 31px;
+			h1 {
+				font-size: 36px;
+				line-height: 36px;
+			}
+			.line {
+				height: 6px;
+				right: 37px;
+				bottom: 14px;
+			}
+			.font-icon-arrow-red {
+				right: 0;
+				bottom: -9px;
+				font-size: 40px;
+			}
+		}
+	}
+}
+
+/*----------  home page
+------------------------------------------------------------------------------*/
+.home-page-wrapper {
+    position: relative;
+    top: -230px;
+    margin-bottom: -190px;
+    .content-body {
+        margin-bottom: 0;
+    }
+    .about {
+        > div {
+            padding: 0;
+            >div {
+                margin-bottom: 40px;
+            }
+        }
+        .item {
+            float: left;
+            padding: 30px 40px;
+            background-color: $white;
+            border: 1px solid $grey-light;
+            .title {
+                font-family: $font-con;
+                font-size: 24px;
+                color: $grey-dark;
+                text-transform: uppercase;
+            }
+            img {
+                float: left;
+                margin: 0 15px 17px 0;
+                &.mobile {
+                    display: none;
+                }
+            }
+            .description {
+                color: $grey;
+            }
+            .more {
+                display: block;
+                clear: left;
+            }
+        }
+    }
+
+    @include breakpoint(phone){
+        .about {
+            >div {
+                >div {
+                    margin-bottom: 0;
+                }
+            }
+            .item {
+                padding: 30px 20px;
+                background-color: $grey-light;
+                margin-bottom: 20px;
+                width: 100%;
+                img {
+                    &.mobile {
+                        display: block;
+                    }
+                    &.desktop {
+                        display: none;
+                    }
+                }
+                .title {
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+}
+
+/*----------  sidebar
+------------------------------------------------------------------------------*/
+.side-nav {
+	> ul {
+		@include base-float;
+		margin-top: 7px;
+		border-top: 2px solid #e5e5e5;
+		li {
+			@include base-float;
+			border-bottom: 1px solid #e5e5e5;
+		}
+		a {
+			@include base-float;
+			padding: 13px 0 8px 0;
+			font-family: $font-con;
+			font-weight: bold;
+			text-transform: uppercase;
+			line-height: 18px;
+			color: $grey-dark;
+			letter-spacing: -0.2px;
+			&:hover, &.active {
+				color: $red;
+                text-decoration: none;
+			}
+		}
+		ul {
+			padding-left: 20px;
+			li {
+				border: none;
+			}
+			a {
+				color: $grey;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		display: none;
+	}
+}
+
+/*----------  breadcrumb
+------------------------------------------------------------------------------*/
+.breadcrumb {
+	@include base-float;
+	li {
+		display: inline-block;
+		position: relative;
+		color: $white;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 16px;
+		color: $white;
+		margin-right: 2px;
+		&:after {
+			@include awesome;
+			content: '\f178';
+			margin-left: 5px;
+			position: relative;
+			top: -1px;
+		}
+		&:last-child:after {
+			display: none;
+		}
+	}
+	a {
+		color: $white;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+/*----------  accordion
+------------------------------------------------------------------------------*/
+.accordion {
+	.accordion-item-wrapper {
+        border-bottom: 1px solid $grey-light;
+        &:first-child {
+            border-top: 1px solid $grey-light;
+        }
+	}
+	.accordion-head {
+		padding: 15px 20px;
+		color: $red;
+		font-weight: bold;
+		cursor: pointer;
+		&:after {
+			content: '\f107';
+			@include awesome;
+			color: $grey;
+			float: right;
+            font-size: 25px;
+            font-weight: normal;
+		}
+		&.open {
+			&:after {
+				content: '\f106';
+			}
+		}
+	}
+	.accordion-body {
+		padding: 3px 20px 20px;
+		display: none;
+		color: $grey;
+        p {
+            width: 88%;
+        }
+	}
+
+    @include breakpoint(phone){
+        .accordion-body {
+            p {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/*----------  tabs
+------------------------------------------------------------------------------*/
+.tabs {
+	width: 100%;
+	display: inline-block;
+	.tab-links {
+		border-bottom: 1px solid $grey-light;
+        margin-bottom: 0;
+		padding-left: 0;
+		li {
+			margin: 0 1px;
+			float: left;
+			list-style: none;
+			&:first-child {
+				margin-left: 0;
+			}
+			&.active a {
+				background: $white;
+				color: $red;
+                padding: 10px 64px;
+			}
+		}
+		a {
+			font-family: $font-con;
+			padding: 10px 57px;
+			display: inline-block;
+			background: $grey-light;
+			font-size: 20px;
+			color: $grey;
+			transition: all linear 0.15s;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: relative;
+            top: 1px;
+            border: 1px solid $grey-light;
+            border-bottom: 0;
+			&:hover {
+                background: $white;
+                color: $red;
+                text-decoration: none;
+			}
+		}
+	}
+	.tab-content {
+		padding: 35px 0 0 0;
+		background: $white;
+		.tab {
+			display: none;
+		}
+        .block {
+            margin: 0;
+        }
+	}
+	@include breakpoint (tablet) {
+		.tab-links a {
+			padding: 10px 15px;
+		}
+	}
+	@include breakpoint (phone) {
+		.tab-links {
+			li {
+				margin: 0 1px;
+				&:nth-child(n+5) {
+					display: none;
+					width: 100%;
+					float: left;
+					margin-bottom: 1px;
+					&.selected {
+						a {
+							padding: 14px 18px 13px;
+						}
+					}
+					a {
+						padding: 10px;
+						line-height: 1.5;
+						width: 100%;
+					}
+				}
+				&.more-btn {
+					display: inline-block;
+					width: auto;
+					border-top: none;
+					cursor: pointer;
+				}
+				&.more-btn {
+					padding: 4px 15px;
+					background-color: $grey-light;
+                    position: relative;
+                    top: 1px;
+					&:after {
+						content: '\f107';
+						@include awesome;
+						color: $grey;
+						float: right;
+			            font-size: 25px;
+			            font-weight: normal;
+						line-height: 41px;
+					}
+					&.opened {
+						&:after {
+							content: '\f106';
+						}
+					}
+				}
+                &.active a {
+                    padding: 13px 22px;
+                }
+			}
+			a {
+				padding: 13px 22px;
+                font-size: 16px;
+			}
+		}
+		.tab-content {
+			padding-top: 20px;
+		}
+	}
+}
+
+/*----------  paging
+------------------------------------------------------------------------------*/
+.paging {
+	@include base-float;
+	border-top: 3px solid #e5e5e5;
+	border-bottom: 3px solid #e5e5e5;
+	padding: 16px 0;
+	text-align: center;
+	li {
+		display: inline-block;
+		a {
+			color: $red;
+			padding: 2px 11px;
+			&:hover, &:active {
+				color: $grey-dark;
+				background: #e9e9e9;
+                text-decoration: none;
+			}
+			&.active {
+				background: #e9e9e9;
+			}
+			.fa.fa-arrow-circle-o-left {
+				margin-right: 20px;
+				font-size: 16px;
+			}
+			.fa.fa-arrow-circle-o-right {
+				margin-left: 20px;
+				font-size: 16px;
+			}
+		}
+		&.prev,
+		&.next {
+			a {
+				font-weight: 700;
+				&:hover, &.active {
+					background: none;
+				}
+			}
+		}
+		&.next a {
+			padding-right: 0;
+		}
+		&.prev a {
+			padding-left: 0;
+		}
+	}
+}
+
+
+/*----------  image gallery list
+------------------------------------------------------------------------------*/
+.gallery.library {
+	@include base-float;
+}
+.gallery-item {
+	float: left;
+	margin-bottom: 30px;
+	.gallery-title {
+		border: 1px solid $grey-light;
+		border-top: 0;
+		font-weight: bold;
+		font-size: 16px;
+		margin-bottom: 0;
+		a {
+			color: $red;
+			padding: 15px;
+			display: inline-block;
+		}
+
+		.download {
+			cursor: pointer;
+			float: right;
+			position: relative;
+			top: 16px;
+
+			.fa {
+				color: $grey;
+			}
+		}
+	}
+
+	img {
+		width:100%;
+		height:auto;
+		margin:0;
+	}
+	@include breakpoint (phone) {
+		margin-bottom: 20px;
+	}
+}
+
+/*----------  SPOTLIGHTS
+------------------------------------------------------------------------------*/
+.spotlights {
+	margin: 0 -15px 25px;
+	>div {
+		padding: 0;
+		display: flex;
+		overflow: hidden;
+		>div {
+			flex: 1;
+		}
+		.item {
+			height: 100%;
+			position: relative;
+			padding-bottom: 48px;
+			border-bottom: 3px solid $grey-light;
+		}
+	}
+	img {
+		margin-bottom: 16px;
+		width: 100%;
+	}
+	.title {
+		color: $red;
+		font-size: 16px;
+		margin-bottom: 0;
+		font-weight: 700;
+	}
+	.description {
+		color: $grey;
+		p {
+			margin-bottom: 20px;
+		}
+	}
+	.more {
+		position: absolute;
+		bottom: 23px;
+		margin-bottom: 0;
+	}
+
+	@include breakpoint(phone) {
+        margin-bottom: 0;
+		>div {
+			display: block;
+			>div {
+				display: block;
+				margin-bottom: 30px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+			}
+			.item {
+				padding-bottom: 0;
+				height: auto !important;
+			}
+		}
+		.more {
+			position: relative;
+			display: block;
+			bottom: 0;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+/*----------  News box
+/* ovaj css i html struktura se moze koristiti za kolone od po 4 news item-a
+/* tada treba staviti u html-u col-md-3 umesto col-md-4
+------------------------------------------------------------------------------*/
+.news-box {
+	>div {
+		display: flex;
+		overflow: hidden;
+		padding: 0;
+		>div {
+			flex: 1;
+		}
+	}
+	.news-item {
+		border: 1px solid $grey-light;
+		padding: 25px 18px 70px;
+		height: 100%;
+		position: relative;
+	}
+    .with-image {
+        img {
+            margin-bottom: 20px;
+            width: 100%;
+            &.mobile {
+                display: none;
+            }
+        }
+        p {
+            color: $grey;
+        }
+    }
+    .share-price {
+        >div {
+            p {
+                color: $grey;
+                border-bottom: 1px solid $grey-light;
+                padding: 12px 0;
+                margin-bottom: 0;
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+            .value {
+                color: #00a9e0;
+                font-size: 72px;
+                font-family: $font-con;
+                font-weight: bold;
+                padding-top: 0;
+                line-height: 1;
+            }
+            .label {
+                font-size: 14px;
+                color: #236192;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: $font-con;
+            }
+            .data {
+                float: right;
+                display: inline-block;
+            }
+        }
+    }
+	.title {
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		border-bottom: 2px solid $grey-light;
+		text-transform: uppercase;
+        font-family: $font-con;
+        color: $grey-dark;
+	}
+	li {
+		margin-bottom: 30px;
+		a {
+			display: block;
+			color: $red;
+		}
+	}
+	.date {
+		display: block;
+		color: $grey;
+	}
+	.more {
+		bottom: 25px;
+		margin-bottom: 0;
+		position: absolute;
+		display: block;
+		padding-top: 20px;
+		border-top: 2px solid $grey-light;
+		width: 85%;
+        letter-spacing: -0.5px;
+	}
+
+    @include breakpoint(tablet){
+        >div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            >div {
+                &:last-child {
+                    flex: 0 1 100%;
+                    order: -1;
+                    margin-bottom: 30px;
+                    .more {
+                        width: 95%;
+                    }
+                }
+            }
+        }
+    }
+
+	@include breakpoint(phone){
+		>div {
+			display: block;
+			>div {
+				margin-bottom: 0;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+        .news-item {
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 2px;
+        }
+        .title {
+            font-size: 17px;
+        }
+        .more {
+            width: 100%;
+        }
+        .with-image {
+            p {
+                margin-bottom: 20px;
+            }
+            img {
+                &.mobile {
+                    display: block;
+                }
+                &.desktop {
+                    display: none;
+                }
+            }
+        }
+	}
+}
+
+/*----------  Investor landing page
+------------------------------------------------------------------------------*/
+.investor-landing {
+    .news-box {
+        margin-top: 30px;
+        >div {
+            >div {
+                &:last-child {
+                }
+            }
+        }
+    }
+}
+
+/*----------  people page
+------------------------------------------------------------------------------*/
+.people-list {
+	.people-item {
+		margin-bottom: 15px;
+		// .holder {
+		// 	width: 100%;
+		// 	background: #e5e5e5;
+		// 	float: left;
+		// 	height: 180px;
+		// 	overflow: hidden;
+		// 	margin-bottom: 15px;
+		// 	a {
+		// 		display: block;
+		// 		padding-top: 10px;
+		// 	}
+		// 	img {
+		// 		max-width: 100%;
+		// 		position: relative;
+		// 		left: 50%;
+		// 		@include translate(-50%, 0);
+		// 	}
+		// }
+		img {
+			margin-bottom: 15px;
+			width: 100%;
+		}
+		h3 {
+			text-transform: capitalize;
+			color: $red;
+			margin-bottom: 0;
+		}
+		h4 {
+			text-transform: uppercase;
+			color: $grey;
+			font-family: $font-con;
+			font-weight: 700;
+			width: 80%;
+		}
+	}
+	@include breakpoint (phone) {
+		.people-item {
+			h4 {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.popup-window {
+    background: #FFF;
+    padding: 42px 40px 0 35px;
+    text-align: left;
+    margin: 40px auto;
+    position: relative;
+    float: left;
+    .in {
+        @include base-float;
+        .fleft {
+            width: 30%;
+            img {
+				float: right;
+            }
+        }
+        .fright {
+            width: 66.5%;
+			padding-right: 114px;
+            h1 {
+                margin-bottom: 0;
+				text-transform: capitalize;
+				color: $red;
+                font-size: 26px;
+            }
+            .position {
+                display: block;
+                margin-bottom: 20px;
+				text-transform: uppercase;
+				font-family: $font-con;
+				font-weight: 700;
+            }
+            p {
+                font-size: 16px;
+                line-height: 23px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+	.mfp-close {
+		right: 38px !important;
+	    top: 47px !important;
+		font-weight: 700;
+		color: $blue;
+		font-size: 45px;
+	}
+	// @media only screen and (min-width: 768px) {
+	// 	.in .fleft.grayscale {
+	// 		-webkit-filter: none;
+	// 	}
+	// }
+	@include breakpoint(phone) {
+		margin: 30px 0;
+		padding: 49px 20px 20px;
+		.in {
+			.fleft, .fright {
+				width: 100%;
+			}
+			.fleft {
+				margin-bottom: 20px;
+			    float: left;
+			    height: 180px;
+			    overflow: hidden;
+			    margin-bottom: 15px;
+				background: #e5e5e5;
+				padding-top: 10px;
+				img {
+					position: relative;
+					left: 50%;
+					@include translate(-50%, 0);
+					width: auto;
+					float: none;
+				}
+			}
+			.fright {
+				padding-right: 0;
+			}
+		}
+		.mfp-close {
+		    right: 8px !Important;
+		    top: 11px !important;
+		    font-size: 34px;
+		}
+	}
+}

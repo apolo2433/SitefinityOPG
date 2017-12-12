@@ -1,0 +1,12 @@
+/*----------  forms
+------------------------------------------------------------------------------*/
+
+input,
+textarea {
+	border-radius: 0;
+	background: $white;
+	height: 25px;
+	padding: 0 10px;
+	color: $black;
+	@include input-placeholder($black);
+}

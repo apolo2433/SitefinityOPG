@@ -1,0 +1,134 @@
+<%@ Master %>
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0" />
+	<link href="favicon.ico" rel="icon" />
+	<title>Client Name PLC</title>
+	<meta name="description" content="">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<asp:ContentPlaceHolder ID="cphAdditionalHead" runat="server" />
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<div class="wrapper">
+				<a href="Default.aspx" class="logo">
+					<img src="assets/img/logo.png" alt="" />
+				</a>
+				<a href="javascript:;" class="trigger-nav"><i class="zmdi zmdi-menu"></i></a>
+				<nav class="main-nav">
+					<ul>
+						<li>
+							<a href="javascript:;">About us</a> <i></i>
+						</li>
+						<li>
+							<a href="javascript:;">Operations</a> <i></i>
+							<ul>
+								<li>
+									<a href="javascript:;">Operations Overview</a>
+								</li>
+								<li>
+									<a href="javascript:;">Plants in operations</a>
+									<ul>
+										<li>
+											<a href="javascript:;">Thermals</a>
+											<ul>
+												<li>
+													<a href="javascript:;">Lorem Ipsum</a>
+												</li>
+												<li>
+													<a href="javascript:;">Lorem Ipsum</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="javascript:;">renewable</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="javascript:;">Plants in development</a>
+									<ul>
+										<li>
+											<a href="javascript:;">12 MW bellary</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="javascript:;">PCB Documents</a>
+								</li>
+							</ul>
+						</li>
+						<li  class="selected">
+							<a href="javascript:;">Investors</a> <i></i>
+						</li>
+						<li>
+							<a href="javascript:;">Customers</a> <i></i>
+						</li>
+						<li>
+							<a href="javascript:;">Media</a> <i></i>
+						</li>
+						<li>
+							<a href="javascript:;">Contact</a> <i></i>
+						</li>
+					</ul>
+					<div class="search">
+						<a href="javascript:;" class="trigger-search"><i class="zmdi zmdi-search"></i></a>
+						<div class="search-inner">
+							<input type="text" placeholder="Search" />
+							<button><i class="zmdi zmdi-search"></i></button>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<div class="content">
+			<asp:ContentPlaceHolder ID="cphContent" runat="server" />
+		</div>
+
+		<footer class="footer">
+			<div class="wrapper">
+				<ul>
+					<li>
+						&copy; Company Name PLC 2017
+					</li>
+					<li>
+						<a href="javascript:void(0)">Accessibility</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">Disclaimer</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">Cookie Policy</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">Sitemap</a>
+					</li>
+				</ul>
+				<p>
+					By <a href="http://www.google.com">A Client</a>
+				</p>
+			</div>
+		</footer>
+	</div>
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="assets/scripts/libs/jquery-1.11.2.min.js"></script>
+	<asp:ContentPlaceHolder ID="cphAdditionalFooter" runat="server" />
+	<script type="text/javascript" src="assets/scripts/libs/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="assets/scripts/libs/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="assets/scripts/default.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/*----------  footer
+------------------------------------------------------------------------------*/
+.footer {
+	@include base-float;
+	background-color: $grey-dark;
+	padding: 43px;
+	height: 100px;
+	ul {
+		float: left;
+		li {
+			float: left;
+			color: $white;
+			line-height: 17px;
+			position: relative;
+			padding-right: 11px;
+			margin-right: 7px;
+			&:after {
+				content: '|';
+				position: absolute;
+				top: 0;
+				right: 0;
+				color: $white;
+			}
+			&:last-of-type {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+	p {
+		float: right;
+		color: $white;
+		line-height: 17px;
+	}
+	a {
+		color: $white;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 15px 0;
+		ul {
+			margin-bottom: 10px;
+			li {
+				font-size: 13px;
+			}
+		}
+		p {
+			font-size: 13px;
+			float: left;
+		}
+	}
+}

@@ -1,0 +1,335 @@
+/*----------  header
+------------------------------------------------------------------------------*/
+.header {
+	@include base-float;
+	background: $white;
+	height: 100px;
+	position: relative;
+	z-index: 10;
+	.logo {
+		width: 130px;
+		float: left;
+		margin-top: 20px;
+		img {
+			width: 100%;
+		}
+	}
+	.trigger-nav {
+		display: none;
+	}
+	.main-nav {
+		float: right;
+		padding-top: 35px;
+		height: 100px;
+		ul {
+			float: left;
+			padding: 6px 21px 0 0;
+			li {
+				float: left;
+				margin-right: 32px;
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+			i {
+				display: none;
+			}
+			a {
+				font-family: $font-con;
+				font-weight: bold;
+				color: $grey-dark;
+				font-size: 18px;
+				line-height: 22px;
+				text-transform: uppercase;
+				@include transition(all 0.3s ease);
+				position: relative;
+				letter-spacing: -0.4px;
+				&:hover {
+					color: $red;
+                    text-decoration: none;
+				}
+				&.active, .open, {
+					color: $red;
+					&:before {
+						content: '';
+						position: absolute;
+						top: 54px;
+						left: 2px;
+						right: 2px;
+						height: 5px;
+						background: $red;
+					}
+				}
+			}
+			ul {
+				display: none;
+			}
+            .has-children {
+                ul {
+                    a {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+		}
+	}
+	.search {
+		float: left;
+		position: relative;
+		.trigger-search {
+			width: 30px;
+			float: left;
+			font-size: 24px;
+			color: $blue;
+			text-align: right;
+		}
+		.search-inner {
+			display: none;
+			position: absolute;
+			top: 65px;
+			right: -37px;
+			width: 262px;
+			padding: 30px 30px 27px 30px;
+			background: $grey-light;
+			input {
+				@include base-float;
+				border: 1px solid #bdbdbd;
+				font-family: $font;
+				color: $grey;
+				@include input-placeholder($grey);
+				height: 30px;
+				padding: 0 30px 0 10px;
+				outline: none;
+			    -webkit-appearance: none;
+			    -moz-appearance: none;
+			}
+			button {
+				position: absolute;
+				top: 31px;
+				right: 32px;
+				width: 28px;
+				height: 28px;
+				border: 0;
+				outline: none;
+				background: $white;
+				color: $blue;
+				font-size: 20px;
+				padding: 0;
+				text-align: center;
+			}
+		}
+	}
+	@media only screen and (min-width: 961px) and (max-width: 1220px) {
+		.search .search-inner {
+			right: -20px;
+		}
+	}
+	@media only screen and (min-width: 961px) {
+		.main-nav {
+			display: block !important;
+			> ul > li {
+				position: relative;
+				i {
+					&:before {
+						content: '';
+						position: absolute;
+						top: 54px;
+						left: 2px;
+						right: 2px;
+						height: 5px;
+						background: $red;
+					}
+				}
+				&.selected {
+					i {
+						display: block;
+					}
+				}
+				&:hover {
+					a {
+						float: left;
+						height: 60px;
+					}
+					i {
+						display: block;
+					}
+					> ul {
+						display: block !important;
+						position: absolute;
+						top: 59px;
+						left: 50%;
+						margin-left: -133px;
+						background: #f1f1f1;
+						width: 266px;
+						padding: 38px 25px 25px 25px;
+						text-align: center;
+						li {
+							margin: 0 0 20px 0;
+							padding-bottom: 19px;
+							border-bottom: 1px solid #e5e5e5;
+							float: none;
+							a {
+								height: auto;
+								float: none;
+								text-transform: capitalize;
+								color: $red;
+								&:before {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+	@media only screen and (min-width: 120px) and (max-width: 960px) {
+		.trigger-nav {
+			display: block;
+			float: right;
+			color: $blue;
+			font-size: 30px;
+			margin-top: 30px;
+			&.open .zmdi-menu {
+				margin-right: 4px;
+				&:before {
+					content: '\f136';
+				}
+			}
+		}
+		.logo {
+			width: 100px;
+			margin-top: 27px;
+		}
+		.main-nav {
+			display: none;
+			height: auto;
+			padding-top: 0;
+			position: absolute;
+			top: 100px;
+			left: 0;
+			width: 100%;
+			ul {
+				@include base-float;
+				padding: 0;
+				li {
+					@include base-float;
+					position: relative;
+					&.has-children i {
+						display: block;
+					}
+					&.open i {
+						@include rotate(180deg);
+					}
+				}
+				i {
+					@include mdi;
+					display: none;
+					position: absolute;
+					top: 15px;
+					right: 11px;
+					width: 30px;
+					text-align: center;
+					color: $black;
+					font-size: 26px;
+					@include transition(all 0.3s ease);
+					&:before {
+						content: '\f2f9';
+					}
+				}
+				a {
+					@include base-float;
+					&.active {
+						color: $grey-dark;
+						&:before {
+							display: none;
+						}
+					}
+				}
+				ul {
+					li {
+						margin-bottom: 12px;
+						&:last-child {
+							margin-bottom: 0 !important;
+						}
+					}
+					a {
+						font-size: 14px;
+						line-height: 18px;
+						color: $grey;
+						padding: 5px 0;
+					}
+					ul {
+						margin-top: 11px;
+						display: block;
+					}
+				}
+			}
+			> ul {
+				background: $grey-light;
+				> li {
+					border-bottom: 1px solid $white;
+					> a {
+						padding: 17px 40px 12px 19px;
+					}
+					> ul {
+						margin-bottom: 20px;
+						> li {
+							> a {
+								padding-left: 40px;
+								&:before {
+									content: font-char(icon-arrow-red);
+									@include font-styles;
+									position: absolute;
+									top: 4px;
+									left: 20px;
+									color: $red;
+								}
+							}
+							> ul li {
+								> a {
+									padding-left: 60px;
+								}
+								> ul li > a {
+									padding-left: 80px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.search {
+			@include base-float;
+			.trigger-search {
+				display: none;
+			}
+			.search-inner {
+				display: block !important;
+				@include base-float;
+				position: relative;
+				top: auto;
+				right: auto;
+				padding: 24px 60px 28px 20px;
+				input {
+					height: 40px;
+					border: 0;
+				}
+				button {
+					top: 24px;
+					right: 20px;
+					width: 40px;
+					height: 40px;
+					font-size: 24px;
+					text-align: left;
+					i {
+						margin: 2px 0 0 8px;
+					}
+				}
+			}
+		}
+	}
+}

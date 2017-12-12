@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<News xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/ServiceEngine.Model">
+    <ResponseStatus xmlns:d2p1="http://schemas.servicestack.net/types" i:nil="true" />
+    <Version>0</Version>
+    <Currency>GBX</Currency>
+    <Data>
+        <NewsEntry>
+            <Attachments />
+            <Categories>
+                <Category>
+                    <CategoryType>AnnouncementType</CategoryType>
+                    <Data>TST</Data>
+                </Category>
+                <Category>
+                    <CategoryType>RnsId</CategoryType>
+                    <Data>1480V07</Data>
+                </Category>
+            </Categories>
+            <Content i:nil="true" />
+            <ContentNoHtml i:nil="true" />
+            <Headline>Trading Update</Headline>
+            <HtmlUrl>http://www.google.com</HtmlUrl>
+            <InsiderInformation i:nil="true" />
+            <PdfFileSize>38109</PdfFileSize>
+            <PdfUrl>http://www.orimi.com/pdf-test.pdf</PdfUrl>
+            <Resume i:nil="true" />
+            <StoryID>13520285</StoryID>
+            <Timestamp>2017-01-26T07:00:10Z</Timestamp>
+        </NewsEntry>
+        <NewsEntry>
+            <Attachments />
+            <Categories>
+                <Category>
+                    <CategoryType>AnnouncementType</CategoryType>
+                    <Data>MSC</Data>
+                </Category>
+                <Category>
+                    <CategoryType>RnsId</CategoryType>
+                    <Data>1069V13</Data>
+                </Category>
+            </Categories>
+            <Content i:nil="true" />
+            <ContentNoHtml i:nil="true" />
+            <Headline>At vero eos et accusamus et iusto</Headline>
+            <HtmlUrl>http://www.google.com</HtmlUrl>
+            <InsiderInformation i:nil="true" />
+            <PdfFileSize>34271</PdfFileSize>
+            <PdfUrl>http://www.orimi.com/pdf-test.pdf</PdfUrl>
+            <Resume i:nil="true" />
+            <StoryID>13519841</StoryID>
+            <Timestamp>2017-01-25T13:09:02Z</Timestamp>
+        </NewsEntry>
+        <NewsEntry>
+            <Attachments />
+            <Categories>
+                <Category>
+                    <CategoryType>AnnouncementType</CategoryType>
+                    <Data>MSC</Data>
+                </Category>
+                <Category>
+                    <CategoryType>RnsId</CategoryType>
+                    <Data>7685T08</Data>
+                </Category>
+            </Categories>
+            <Content i:nil="true" />
+            <ContentNoHtml i:nil="true" />
+            <Headline>Nam libero tempore</Headline>
+            <HtmlUrl>http://www.google.com</HtmlUrl>
+            <InsiderInformation i:nil="true" />
+            <PdfFileSize>34498</PdfFileSize>
+            <PdfUrl>http://www.orimi.com/pdf-test.pdf</PdfUrl>
+            <Resume i:nil="true" />
+            <StoryID>13511935</StoryID>
+            <Timestamp>2017-01-10T08:10:22Z</Timestamp>
+        </NewsEntry>
+        <NewsEntry>
+            <Attachments />
+            <Categories>
+                <Category>
+                    <CategoryType>AnnouncementType</CategoryType>
+                    <Data>DIV</Data>
+                </Category>
+                <Category>
+                    <CategoryType>RnsId</CategoryType>
+                    <Data>5380T09</Data>
+                </Category>
+            </Categories>
+            <Content i:nil="true" />
+            <ContentNoHtml i:nil="true" />
+            <Headline>Temporibus autem quibusdam et aut officiis</Headline>
+            <HtmlUrl>http://www.google.com</HtmlUrl>
+            <InsiderInformation i:nil="true" />
+            <PdfFileSize>34420</PdfFileSize>
+            <PdfUrl>http://www.orimi.com/pdf-test.pdf</PdfUrl>
+            <Resume i:nil="true" />
+            <StoryID>13510579</StoryID>
+            <Timestamp>2017-01-06T09:22:51Z</Timestamp>
+        </NewsEntry>
+    </Data>
+    <ExchangeName>London Stock Exchange</ExchangeName>
+    <InstrumentID>1000842</InstrumentID>
+    <InstrumentType>Listing</InstrumentType>
+    <Name>Client Name PLC</Name>
+    <Ranking>0</Ranking>
+    <Symbol>OPG</Symbol>
+</News>

@@ -1,0 +1,274 @@
+/*----------  lists
+------------------------------------------------------------------------------*/
+
+
+// /*! Gray v1.4.5 (https://github.com/karlhorky/gray) | MIT */
+// .grayscale {
+//   /* Firefox 10-34 */
+//   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0'/></filter></svg>#grayscale");
+//
+//   /*
+//     Chrome 19+,
+//     Safari 6+,
+//     Safari 6+ iOS,
+//     Opera 15+
+//   */
+//   -webkit-filter: grayscale(1);
+//
+//   /* Firefox 35+ */
+//   filter: grayscale(1);
+//
+//   /* IE 6-9 */
+//   filter: gray;
+// }
+//
+// .grayscale.grayscale-fade {
+//   transition: filter .5s;
+// }
+//
+// /* Webkit hack until filter is unprefixed */
+// @media screen and (-webkit-min-device-pixel-ratio: 0) {
+//   .grayscale.grayscale-fade {
+//     -webkit-transition: -webkit-filter .5s;
+//     transition:         -webkit-filter .5s;
+//   }
+// }
+//
+// .grayscale.grayscale-off,
+// .grayscale.grayscale-fade:hover {
+//   -webkit-filter: grayscale(0);
+//   filter:         grayscale(0);
+// }
+//
+// /* Background element */
+// .grayscale.grayscale-replaced {
+//   -webkit-filter: none;
+//   filter:         none;
+// }
+//
+// .grayscale.grayscale-replaced > svg {
+//   -webkit-transition: opacity .5s ease;
+//   transition:         opacity .5s ease;
+//   opacity: 1;
+// }
+//
+// .grayscale.grayscale-replaced.grayscale-off > svg,
+// .grayscale.grayscale-replaced.grayscale-fade:hover > svg {
+//   opacity: 0;
+// }
+
+
+/*----------  search for sidebar
+------------------------------------------------------------------------------*/
+.search {
+    h4 {
+        font-family: $font-con;
+        text-transform: uppercase;
+        color: $grey-dark;
+        margin-bottom: 10px;
+    }
+    .inner {
+        @include base-float;
+        position: relative;
+        max-width: 209px;
+        input {
+            @include base-float;
+            border: 1px solid #bdbdbd;
+            font-family: $font;
+            color: $grey;
+            @include input-placeholder($grey);
+            height: 30px;
+            padding: 0 30px 0 10px;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: #e9e9e9;
+        }
+        button {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            width: 28px;
+            height: 28px;
+            border: 0;
+            outline: none;
+            background: #e9e9e9;
+            color: $blue;
+            font-size: 20px;
+            padding: 0;
+            text-align: center;
+        }
+    }
+}
+
+/*----------  search results
+------------------------------------------------------------------------------*/
+.search-results {
+    .intro-text span {
+        font-weight: 700;
+    }
+    ul {
+        li {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 24px;
+            margin-bottom: 19px;
+            h2 {
+                text-transform: uppercase;
+            	font-weight: bold;
+            	font-size: 18px;
+                line-height: 21px;
+            	margin-bottom: 2px;
+            	font-family: $font-con;
+                a {
+                    color: $grey-dark;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            p a {
+                font-weight: 700;
+                color: $red;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    @include breakpoint (phone) {
+        ul li {
+            padding-top: 18px;
+            margin-bottom: 14px;
+        }
+    }
+}
+
+.paging {
+    li {
+        &.prev,
+        &.next {
+            a.active {
+                color: $red !important;
+            }
+        }
+        a.active {
+            color: $grey-dark;
+        }
+    }
+    @include breakpoint (phone) {
+        li a {
+            padding: 2px 6px !important;
+        }
+    }
+}
+
+/*----------  sitemap page
+------------------------------------------------------------------------------*/
+.sitemap-wrap {
+    @include base-float;
+    color: $grey-dark;
+    font-family: $font-con;
+    .in {
+        @include base-float;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+    h3 {
+        margin-bottom: 0;
+    }
+    ul {
+        @include base-float;
+        padding-top: 11px;
+        li {
+            display: block;
+            margin-bottom: 13px;
+            a {
+                font-weight: 700;
+        		&:before {
+        			@include awesome;
+        			content: '\f18e';
+        			color: $red;
+        			font-size: 14px;
+        			margin-right: 5px;
+        		}
+            }
+            ul {
+                padding: 0 0 0 40px;
+                margin-top: 14px;
+                li {
+                    a {
+                        font-weight: 400;
+                        &:before {
+                            display: none;
+                        }
+                    }
+                    ul {
+                        padding: 0 0 0 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*----------  download page
+------------------------------------------------------------------------------*/
+.download-page {
+    .tabs .tab-content {
+        padding-top: 22px;
+    }
+}
+.download-list {
+    @include base-float;
+    .head {
+        @include base-float;
+        border-top: 2px solid #e5e5e5;
+        padding: 22px 0 16px 0;
+        h3 {
+            margin-bottom: 0;
+            font-family: $font-con;
+            color: $grey-dark;
+        }
+    }
+    .item {
+        @include base-float;
+        padding: 26px 0 22px 0;
+        border-top: 1px solid #e5e5e5;
+        &:last-of-type {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .title {
+            font-size: 16px;
+            font-weight: 700;
+            color: $grey-dark;
+            display: block;
+            margin-bottom: 5px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .date {
+            display: block;
+        }
+        .view-download {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 5px;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    @include breakpoint (phone) {
+        .head {
+            display: none;
+        }
+        .item {
+            padding: 21px 0 14px 0;
+            .date {
+                margin-bottom: 6px;
+            }
+        }
+    }
+}

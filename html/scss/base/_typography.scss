@@ -1,0 +1,224 @@
+/*----------  typography
+------------------------------------------------------------------------------*/
+h1 {
+	color: $black;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 15px;
+	font-family: $font-con;
+}
+h2 {
+	color: $red;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 17px;
+}
+h3 {
+	color: $dark-green;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 17px;
+}
+h4 {
+	color: $red;
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 0;
+}
+h6 {
+	&.offscreen {
+		font-size: 0;
+		position: absolute;
+		left: -50000px;
+	}
+}
+
+/*Icon font*/
+[class*="font-"] {
+	display: inline-block;
+	font-size: 30px;
+	color: orangered;
+	line-height: 1;
+}
+
+a {
+	color: $red;
+	&.more {
+		font-weight: 700;
+        &:hover {
+            text-decoration: none;
+        }
+		&:before {
+			@include awesome;
+			content: '\f18e';
+			color: $red;
+			font-size: 18px;
+			margin-right: 5px;
+		}
+	}
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+p {
+	line-height: 22px;
+	margin-bottom: 15px;
+	&.intro-text {
+		font-size: 18px;
+		color: $grey-dark;
+		line-height: 1.7;
+		width: 100%;
+		margin-bottom: 16px;
+	}
+	@include breakpoint (phone) {
+		font-size: 13px;
+		&.intro-text {
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+}
+
+/*----------  RTE content
+------------------------------------------------------------------------------*/
+.rte-content {
+	p {
+		line-height: 22px;
+		margin-bottom: 15px;
+		&.intro-text {
+			font-size: 18px;
+			color: $grey-dark;
+			line-height: 1.7;
+			letter-spacing: 1.2px;
+			width: 100%;
+			margin-bottom: 16px;
+		}
+	}
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+        &.btn {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+	}
+	.intro-text {
+		font-size: 18px;
+		color: #5c5c5c;
+		line-height: 1.5;
+		letter-spacing: 1.2px;
+		width: 100%;
+		margin-bottom: 16px;
+	}
+	.text-with-image {
+		margin-bottom: 25px;
+		p {
+			color: $grey;
+		}
+		img {
+			float: right;
+			margin-left: 40px;
+			margin-bottom: 20px;
+		}
+	}
+	ul {
+		margin-bottom: 25px;
+		padding-left: 30px;
+		li {
+			list-style: inside;
+			list-style-position: outside !important;
+			color: $grey;
+			margin-bottom: 10px;
+		}
+	}
+	ol {
+		margin-bottom: 25px;
+		padding-left: 30px;
+		counter-reset: counter;
+
+		li {
+			color: $grey;
+			margin-bottom: 10px;
+			&:before {
+				content: counter(counter);
+				counter-increment: counter;
+				margin-right: 5px;
+			}
+		}
+	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		border-top: 1px solid $grey-light;
+		margin-bottom: 25px;
+		thead {
+			background-color: #f8ede9;
+			th {
+				font-size: 14px;
+				font-weight: bold;
+				text-transform: uppercase;
+				padding: 15px 30px;
+				text-align: left;
+                white-space: nowrap;
+                &:first-child {
+                    padding-left: 45px;
+                }
+			}
+		}
+		tr {
+			border-bottom: 1px solid $grey-light;
+		}
+		td {
+			padding: 15px 30px;
+            &:first-child {
+                padding-left: 45px;
+            }
+		}
+	}
+	.accordion, .tabs, .btn, .more {
+		margin-bottom: 25px;
+	}
+	.more {
+		display: inline-block;
+	}
+
+	@include breakpoint (phone) {
+		p {
+			font-size: 13px;
+			&.intro-text {
+				font-size: 16px;
+				line-height: 26px;
+			}
+		}
+		&.intro-text {
+			font-size: 16px;
+			line-height: 26px;
+		}
+		.text-with-image img {
+			margin: 0 0 15px 0;
+			width: 100%;
+		}
+		ul, ol {
+			padding-left: 20px;
+		}
+        table {
+            thead {
+                th {
+                    &:first-child {
+                        padding-left: 30px;
+                    }
+                }
+            }
+            td {
+                 &:first-child {
+                    padding-left: 30px;
+                }
+            }
+        }
+	}
+}
