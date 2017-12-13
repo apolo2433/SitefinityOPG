@@ -1,0 +1,42 @@
+﻿@using System.Web.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Services;
+
+<!DOCTYPE html>
+<html @Html.RenderLangAttribute()>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0" />
+    <link href="favicon.ico" rel="icon" />
+    <title>Client Name PLC</title>
+    <meta name="description" content="">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    @Html.Section("additionalHeader")
+
+        @Html.StyleSheet(Url.Content("~/ResourcePackages/Bootstrap/assets/dist/css/style.css"), "additionalHeader")
+</head>
+<body>
+    <div class="container">
+        @Html.SfPlaceHolder("Header")
+        <div >
+            @Html.SfPlaceHolder("Body")
+        </div>
+        @Html.SfPlaceHolder("Footer")
+    </div>
+    @Html.Section("additionalFooter")
+
+    @if (!SystemManager.IsDesignMode)
+    {
+        @Html.Script(Url.Content("~/ResourcePackages/OPGResourceTemplate/MVC/Scripts/libs/jquery-1.11.2.min.js"), "additionalFooter")
+        @Html.Script(Url.Content("~/ResourcePackages/OPGResourceTemplate/MVC/Scripts/libs/masonry.pkgd.min.js"), "additionalFooter")
+        @Html.Script(Url.Content("~/ResourcePackages/OPGResourceTemplate/MVC/Scripts/libs/jquery.magnific-popup.min.js"), "additionalFooter")
+        @Html.Script(Url.Content("~/ResourcePackages/OPGResourceTemplate/MVC/Scripts/default.js"), "additionalFooter")
+    }
+
+</body>
+</html>

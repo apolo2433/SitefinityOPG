@@ -1,4 +1,7 @@
 @model SitefinityOpg.Web.Mvc.Models.HeaderModel
+@using Telerik.Sitefinity.Modules.Pages
+@using Telerik.Sitefinity.Web;
+@using System.Globalization;
 
 <header class="header">
     <div class="wrapper">
@@ -7,61 +10,71 @@
         </a>
         <a href="javascript:;" class="trigger-nav"><i class="zmdi zmdi-menu"></i></a>
         <nav class="main-nav">
-            <ul>
-                <li>
-                    <a href="javascript:;">About us</a> <i></i>
-                </li>
-                <li>
-                    <a href="javascript:;">Operations</a> <i></i>
-                    <ul>
+            @if (Model.SecondLevelPages != null && Model.SecondLevelPages.Any())
+            {
+                <ul>
+                    @foreach (var page in Model.SecondLevelPages)
+                    {
                         <li>
-                            <a href="javascript:;">Operations Overview</a>
+                            <a href="@UrlPath.ResolveUrl(page.GetUrl(), true, true)">@page.Title</a> <i></i>
                         </li>
-                        <li>
-                            <a href="javascript:;">Plants in operations</a>
-                            <ul>
-                                <li>
-                                    <a href="javascript:;">Thermals</a>
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:;">Lorem Ipsum</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;">Lorem Ipsum</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">renewable</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:;">Plants in development</a>
-                            <ul>
-                                <li>
-                                    <a href="javascript:;">12 MW bellary</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:;">PCB Documents</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="selected">
-                    <a href="javascript:;">Investors</a> <i></i>
-                </li>
-                <li>
-                    <a href="javascript:;">Customers</a> <i></i>
-                </li>
-                <li>
-                    <a href="javascript:;">Media</a> <i></i>
-                </li>
-                <li>
-                    <a href="javascript:;">Contact</a> <i></i>
-                </li>
-            </ul>
+                    }
+                    @*<li>
+                        <a href="javascript:;">About us</a> <i></i>
+                    </li>
+                    <li>
+                        <a href="javascript:;">Operations</a> <i></i>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">Operations Overview</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Plants in operations</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">Thermals</a>
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:;">Lorem Ipsum</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">Lorem Ipsum</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">renewable</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;">Plants in development</a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;">12 MW bellary</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;">PCB Documents</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="selected">
+                        <a href="javascript:;">Investors</a> <i></i>
+                    </li>
+                    <li>
+                        <a href="javascript:;">Customers</a> <i></i>
+                    </li>
+                    <li>
+                        <a href="javascript:;">Media</a> <i></i>
+                    </li>
+                    <li>
+                        <a href="javascript:;">Contact</a> <i></i>
+                    </li>*@
+                </ul>
+            }
+         
             <div class="search">
                 <a href="javascript:;" class="trigger-search"><i class="zmdi zmdi-search"></i></a>
                 <div class="search-inner">

@@ -23,25 +23,29 @@
     <div>
         @Html.SfPlaceHolder("Body")
     </div>
-
+    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/jquery-1.11.2.min.js"), "top")
+    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/masonry.pkgd.min.js"), "top")
+    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/jquery.magnific-popup.min.js"), "top")
+    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/default.js"), "top")
     @* Inline editing scripts and helpers. They should be available only when inline editing is possible. *@
-    @*@if (Html.ShouldRenderInlineEditing())
-        {
-            @Html.Script(ScriptRef.MicrosoftAjax, "top")
-            @Html.Script(ScriptRef.MicrosoftAjaxCore, "top")
-           
-            @Html.Script(Url.EmbeddedResource("Telerik.Sitefinity.Resources.Reference", "Telerik.Sitefinity.Resources.Scripts.jquery.ba-outside-events.min.js"), "top")
-            @Html.Script(ScriptRef.KendoAll, "top")
-            @Html.Script(ScriptRef.KendoTimezones, "top")
-            @Html.Script(Url.EmbeddedResource("Telerik.Sitefinity.Resources.Reference", "Telerik.Sitefinity.Resources.Scripts.RequireJS.require.min.js"), "top")
-            @Html.InlineEditingManager(false)
-        }*@
+    @if (Html.ShouldRenderInlineEditing())
+    {
+
+        @Html.Script(ScriptRef.MicrosoftAjax, "top")
+        @Html.Script(ScriptRef.MicrosoftAjaxCore, "top")
+        @*@Html.Script(ScriptRef.JQuery, "top")*@
+
+        @Html.Script(Url.EmbeddedResource("Telerik.Sitefinity.Resources.Reference", "Telerik.Sitefinity.Resources.Scripts.jquery.ba-outside-events.min.js"), "top")
+        @Html.Script(ScriptRef.KendoAll, "top")
+        @Html.Script(ScriptRef.KendoTimezones, "top")
+        @Html.Script(Url.EmbeddedResource("Telerik.Sitefinity.Resources.Reference", "Telerik.Sitefinity.Resources.Scripts.RequireJS.require.min.js"), "top")
+        @Html.InlineEditingManager(false)
+    }
     @Html.Section("additionalFooter")
 
-    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/jquery-1.11.2.min.js"), "additionalFooter")
-    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/jquery.validate.min.js"), "additionalFooter")
-    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/masonry.pkgd.min.js"), "additionalFooter")
-    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/jquery.magnific-popup.min.js"), "additionalFooter")
-    @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/default.js"), "additionalFooter")
+    @*@Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/jquery.validate.min.js"), "additionalFooter")*@
+    @*@Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/masonry.pkgd.min.js"), "additionalFooter")
+        @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/libs/jquery.magnific-popup.min.js"), "additionalFooter")
+        @Html.Script(Url.Content("~/ResourcePackages/Bootstrap/MVC/Scripts/default.js"), "additionalFooter")*@
 </body>
 </html>
